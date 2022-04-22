@@ -1,0 +1,36 @@
+<div class="theme-page">
+
+  <div class="theme-title">
+
+    {{theme.title}}
+
+  </div>
+
+  {{!-- написать логику вывода одно вопроса, пооому что сюда приходит массив вопросов questions, смотреть в роутер --}}
+
+  {{#each questions}}
+
+  <div class="question">
+
+    <div class="question-text">{{this.qustion}}</div>
+
+    <form action="">
+
+      <input type="text" placeholder="Ответ">
+
+      <input type="submit" value="Отправить">
+
+    </form>
+
+  </div>
+
+  {{/each}}
+
+  <div id="answer">
+
+    {{!-- Здесь после ajax запроса должен быть вставлен файл рендер answer.hbs, он придёт с роута, смотреть файл
+    application.js --}}
+
+  </div>
+
+</div>

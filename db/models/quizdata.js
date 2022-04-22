@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate({Themes}) {
-      QuizData.belongsTo(Themes, {foreignKey:'themes_id'});
+      QuizData.belongsTo(Themes, {foreignKey:'id_themes'});
 
       
     }

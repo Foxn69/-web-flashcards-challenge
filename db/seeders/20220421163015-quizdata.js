@@ -5,13 +5,13 @@ const { nature, pandas, human, themes} = require(path.join(process.env.PWD, 'qui
 module.exports = {
   async up(queryInterface, Sequelize) {
     
-    // for (let e of themes) {
-    //   await queryInterface.bulkInsert('Themes', [{
-    //     title: e,
-    //     createdAt: new Date(),
-    //     updatedAt: new Date(),
-    //   }], {})
-    // }
+    for (let e of themes) {
+      await queryInterface.bulkInsert('Themes', [{
+        title: e,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      }], {})
+    }
 
 
     for (let el of nature) {

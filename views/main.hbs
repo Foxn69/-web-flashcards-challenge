@@ -1,4 +1,8 @@
 
+
+
+
+
 <div class="container">
     
     <section class="header">
@@ -10,8 +14,19 @@
 
 <section class="cards">
 
-<div class="first">
-<a href="#" class="link-success">Nature</a>
+  {{#each dbThemes}}
+
+  <a class="theme" href="/card?id={{this.id}}">
+
+    {{this.title}}
+
+  </a>
+
+  {{/each}}
+
+
+{{!-- <div class="first">
+<a href="#" class="link-success">{{dbThemes}}</a>
 </div>
 
 <div class="second">
@@ -20,7 +35,7 @@
 
 <div class="third">
 <a href="#" class="link-info">Human</a>
-</div>
+</div> --}}
 
 </section>
 
