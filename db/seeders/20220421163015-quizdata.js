@@ -1,52 +1,51 @@
 'use strict';
 const path = require('path')
 
-const { natureQuestions, natureAnswer, pandas, human, themes} = require(path.join(process.env.PWD, '../../public/quiz'))
+const { nature, pandas, human, themes} = require(path.join(process.env.PWD, 'quiz'))
 module.exports = {
   async up(queryInterface, Sequelize) {
-    /**
-     * Add seed commands here.
-     *
-     * Example:
-     * await queryInterface.bulkInsert('People', [{
-     *   name: 'John Doe',
-     *   isBetaMember: false
-     * }], {});
-     */
-    // await queryInterface.bulkInsert('QuizData', [{
-    //   qustion: 'Цвет неба',
-    //   answer: 'blue',
-    //   id_themes: 1,
-    //   createdAt: new Date(),
-    //   updatedAt: new Date(),
-    // }], {});
-
-    for (let e of themes) {
-      await queryInterface.bulkInsert('Themes', [{
-        title: e,
-        createdAt: new Date(),
-        updatedAt: new Date(),
-      }], {})
-    }
+    
+    // for (let e of themes) {
+    //   await queryInterface.bulkInsert('Themes', [{
+    //     title: e,
+    //     createdAt: new Date(),
+    //     updatedAt: new Date(),
+    //   }], {})
+    // }
 
 
-    // for (let el of natureQuestions) {
+    // for (let el of nature) {
     //   await queryInterface.bulkInsert('QuizData', [{
-    //     qustion: el,
-    //     id_themes: 0++,
+    //     qustion: el[0],
+    //     answer: el[1],
+    //     id_themes: 1,
     //     createdAt: new Date(),
     //     updatedAt: new Date(),
     //   }], {});
     // }
 
-    // for (let el of natureAnswer) {
+    // for (let el of pandas) {
     //   await queryInterface.bulkInsert('QuizData', [{
-    //     answer: el,
-    //     // id_themes: 0++,
-    //     // createdAt: new Date(),
-    //     // updatedAt: new Date(),
+    //     qustion: el[0],
+    //     answer: el[1],
+    //     id_themes: 2,
+    //     createdAt: new Date(),
+    //     updatedAt: new Date(),
     //   }], {});
     // }
+
+
+    for (let el of human) {
+      await queryInterface.bulkInsert('QuizData', [{
+        qustion: el[0],
+        answer: el[1],
+        id_themes: 3,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      }], {});
+    }
+
+  
     
 
   },
