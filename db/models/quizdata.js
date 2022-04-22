@@ -9,8 +9,10 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate() {
-      // QuizData.belongsTo(Themes, {foreignKey:'themes_id'});
+    static associate({Themes}) {
+      QuizData.belongsTo(Themes, {foreignKey:'themes_id'});
+
+      
     }
   }
   QuizData.init({
@@ -20,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       references: {
         model: "Themes",
-        id: 'id_themes'
+        id: 'id'
       }
     }
   }, {

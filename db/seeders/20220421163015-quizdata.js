@@ -14,25 +14,25 @@ module.exports = {
     // }
 
 
-    // for (let el of nature) {
-    //   await queryInterface.bulkInsert('QuizData', [{
-    //     qustion: el[0],
-    //     answer: el[1],
-    //     id_themes: 1,
-    //     createdAt: new Date(),
-    //     updatedAt: new Date(),
-    //   }], {});
-    // }
+    for (let el of nature) {
+      await queryInterface.bulkInsert('QuizData', [{
+        qustion: el[0],
+        answer: el[1],
+        id_themes: 1,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      }], {});
+    }
 
-    // for (let el of pandas) {
-    //   await queryInterface.bulkInsert('QuizData', [{
-    //     qustion: el[0],
-    //     answer: el[1],
-    //     id_themes: 2,
-    //     createdAt: new Date(),
-    //     updatedAt: new Date(),
-    //   }], {});
-    // }
+    for (let el of pandas) {
+      await queryInterface.bulkInsert('QuizData', [{
+        qustion: el[0],
+        answer: el[1],
+        id_themes: 2,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      }], {});
+    }
 
 
     for (let el of human) {

@@ -1,4 +1,6 @@
 const router = require('express').Router();
+const {Themes} = require('../db/models')
+
 
 router.route('/')
   .get((req, res) => {
