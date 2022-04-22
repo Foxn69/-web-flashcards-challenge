@@ -15,7 +15,11 @@ module.exports = {
         type: Sequelize.TEXT
       },
       id_themes: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Themes",
+          id: 'id_themes'
+        }
       },
       createdAt: {
         allowNull: false,

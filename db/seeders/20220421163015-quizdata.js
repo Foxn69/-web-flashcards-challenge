@@ -1,7 +1,7 @@
 'use strict';
 const path = require('path')
 
-const { natureQuestions, natureAnswer, pandas, human } = require(path.join(process.env.PWD, '../../public/quiz'))
+const { natureQuestions, natureAnswer, pandas, human, themes} = require(path.join(process.env.PWD, '../../public/quiz'))
 module.exports = {
   async up(queryInterface, Sequelize) {
     /**
@@ -21,23 +21,32 @@ module.exports = {
     //   updatedAt: new Date(),
     // }], {});
 
-    for (let el of natureQuestions) {
-      await queryInterface.bulkInsert('QuizData', [{
-        qustion: el,
-        id_themes: 0++,
+    for (let e of themes) {
+      await queryInterface.bulkInsert('Themes', [{
+        title: e,
         createdAt: new Date(),
         updatedAt: new Date(),
-      }], {});
+      }], {})
     }
 
-    for (let el of natureAnswer) {
-      await queryInterface.bulkInsert('QuizData', [{
-        answer: el,
-        // id_themes: 0++,
-        // createdAt: new Date(),
-        // updatedAt: new Date(),
-      }], {});
-    }
+
+    // for (let el of natureQuestions) {
+    //   await queryInterface.bulkInsert('QuizData', [{
+    //     qustion: el,
+    //     id_themes: 0++,
+    //     createdAt: new Date(),
+    //     updatedAt: new Date(),
+    //   }], {});
+    // }
+
+    // for (let el of natureAnswer) {
+    //   await queryInterface.bulkInsert('QuizData', [{
+    //     answer: el,
+    //     // id_themes: 0++,
+    //     // createdAt: new Date(),
+    //     // updatedAt: new Date(),
+    //   }], {});
+    // }
     
 
   },

@@ -57,5 +57,8 @@ const human = [{'Назовите самую большую артерию': 'А
 {'Какой внутренний орган увеличивается при вдохе': 'Легкие'}];
 
 
-module.exports = { natureQuestions, natureAnswer, pandas, human }
+const themes = ['nature', 'pandas', 'human']
+
+
+module.exports = { natureQuestions, natureAnswer, pandas, human, themes }
 
