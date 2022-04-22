@@ -10,4 +10,5 @@ const config = (app) => {
   app.use(express.static(path.join(process.env.PWD, 'public')));
 };
 
+
 module.exports = config;
